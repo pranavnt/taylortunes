@@ -1,0 +1,12 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pranav Teegavarapu",
+  "license": "MIT",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "fastify": "^3.27.4",
+    "lunr": "^2.3.9"
+  }
+}
