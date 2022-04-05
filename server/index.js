@@ -83,7 +83,7 @@ fastify.get("/search/:query", async (request, reply) => {
   reply.send(results);
 });
 
-fastify.listen(3000, (err, address) => {
+fastify.listen(8000, (err, address) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
