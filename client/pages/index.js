@@ -36,12 +36,16 @@ export default function Home() {
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-r-2xl"
             type="button"
             onClick={() => {
-              let url = "127.0.0.1:8000/search/" + query;
-              // no-cors mode
+              let url = "https://taylortunes.pranavnt.repl.co/search/" + query;
               fetch(url, {
                 method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
               })
-                .then((res) => res.json())
+                .then((response) => {
+                  return response.json();
+                })
                 .then((data) => {
                   setResults(data);
                 });
@@ -50,15 +54,17 @@ export default function Home() {
             Search
           </button>
         </div>
-        {results.map((result) => {
-          return (
-            <Song
-              title={result.title}
-              album={result.album}
-              matches={result.matches}
-            />
-          );
-        })}
+        <div className="pl-2 pr-2">
+          {results.map((result) => {
+            return (
+              <Song
+                title={result.title}
+                album={result.album}
+                matches={result.matches}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
