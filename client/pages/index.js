@@ -55,9 +55,10 @@ export default function Home() {
           </button>
         </div>
         <div className="pl-2 pr-2">
-          {results.map((result) => {
+          {results.map((result, index) => {
             return (
               <Song
+                key={index}
                 title={result.title}
                 album={result.album}
                 matches={result.matches}
